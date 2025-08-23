@@ -91,10 +91,32 @@
   </div>
 
   <script>
-    function openNav() { const nav = document.getElementById("myNav"); nav.style.width = "260px"; setTimeout(() => nav.classList.add("show"), 200); }
-    function closeNav() { const nav = document.getElementById("myNav"); nav.style.width = "0"; nav.classList.remove("show"); }
-    function toggleMenu() { let menu = document.getElementById("socialMenu"); menu.style.display = menu.style.display === "block" ? "none" : "block"; }
+    function openNav() {
+      const nav = document.getElementById("myNav");
+      nav.style.width = "260px";
+      setTimeout(() => nav.classList.add("show"), 200);
+    }
+    function closeNav() {
+      const nav = document.getElementById("myNav");
+      nav.style.width = "0";
+      nav.classList.remove("show");
+    }
+    function toggleMenu() {
+      let menu = document.getElementById("socialMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
 
     const sections = document.querySelectorAll('#page a');
-    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
 
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
