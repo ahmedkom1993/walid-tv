@@ -2,31 +2,72 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>قنواتي عبر VLC</title>
+  <title></title>وليد تيفي</title>
   <style>
     body {
-      background: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      background: #0d0d0d;
+      color: #fff;
+      font-family: "Tahoma", sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    select {
-      margin: 20px;
-      padding: 12px;
+    header {
+      background: linear-gradient(90deg, #e50914, #221f1f);
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h3 {
+      margin: 10px 0;
       font-size: 18px;
+    }
+    .players {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    .btn {
+      background: #e50914;
+      border: none;
+      padding: 10px;
       border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #ff3333;
     }
   </style>
 </head>
 <body>
-  <h1>📺 قنواتي (VLC مباشر)</h1>
-  <select id="channelList"></select>
+  <header>📺 قنواتي (ستايل شاهد)</header>
+  <div class="container" id="channels"></div>
 
   <script>
     let channels = [];
 
     async function loadM3U() {
-      const response = await fetch('IPTV.m3u'); // لازم الملف يبقى بنفس الاسم
+      const response = await fetch('IPTV.m3u');
       const text = await response.text();
       const lines = text.split('\n');
 
@@ -40,27 +81,63 @@
         }
       }
 
-      const select = document.getElementById('channelList');
-      channels.forEach((ch, index) => {
-        const option = document.createElement('option');
-        option.value = ch.url;
-        option.textContent = ch.name;
-        select.appendChild(option);
-      });
-
-      // افتح أول قناة مباشرة
-      openInVLC(channels[0].url);
-
-      // أي قناة جديدة تتفتح على طول
-      select.addEventListener('change', e => {
-        openInVLC(e.target.value);
-      });
+      renderChannels();
     }
 
-    function openInVLC(url) {
-      // صيغة intent:// خاصة بأندرويد تفتح VLC
-      window.location.href = 
-        "intent://" + url + "#Intent;package=org.videolan.vlc;scheme=http;end";
+    function renderChannels() {
+      const container = document.getElementById('channels');
+      channels.forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const title = document.createElement('h3');
+        title.textContent = ch.name;
+
+        const players = document.createElement('div');
+        players.className = 'players';
+
+        // VLC
+        const vlcBtn = document.createElement('button');
+        vlcBtn.className = 'btn';
+        vlcBtn.textContent = "VLC";
+        vlcBtn.onclick = () => {
+          window.location.href = "intent://" + ch.url + "#Intent;package=org.videolan.vlc;scheme=http;end";
+        };
+
+        // MX Player
+        const mxBtn = document.createElement('button');
+        mxBtn.className = 'btn';
+        mxBtn.textContent = "MX Player";
+        mxBtn.onclick = () => {
+          window.location.href = "intent://" + ch.url + "#Intent;package=com.mxtech.videoplayer.ad;scheme=http;end";
+        };
+
+        // Wuffy
+        const wuffyBtn = document.createElement('button');
+        wuffyBtn.className = 'btn';
+        wuffyBtn.textContent = "Wuffy";
+        wuffyBtn.onclick = () => {
+          window.location.href = "intent://" + ch.url + "#Intent;package=co.wuffy.player;scheme=http;end";
+        };
+
+        // Web Player (داخل التطبيق نفسه لو حابب)
+        const webBtn = document.createElement('button');
+        webBtn.className = 'btn';
+        webBtn.textContent = "Web";
+        webBtn.onclick = () => {
+          alert("هنا ممكن نركب مشغل HLS.js للروابط اللي بتدعم m3u8 فقط");
+        };
+
+        players.appendChild(vlcBtn);
+        players.appendChild(mxBtn);
+        players.appendChild(wuffyBtn);
+        players.appendChild(webBtn);
+
+        card.appendChild(title);
+        card.appendChild(players);
+
+        container.appendChild(card);
+      });
     }
 
     loadM3U();
