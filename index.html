@@ -2,143 +2,66 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>📺 قنواتي</title>
+  <title>📺 قنوات البث المباشر</title>
   <style>
     body {
-      background: #0d0d0d;
+      font-family: Arial, sans-serif;
+      background: #111;
       color: #fff;
-      font-family: "Tahoma", sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
     }
-    header {
-      background: linear-gradient(90deg, #e50914, #221f1f);
-      padding: 20px;
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
+    h1 {
+      margin: 20px 0;
+      color: #e50914;
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
+    .channel {
+      background: #222;
+      margin: 15px;
       padding: 20px;
-    }
-    .card {
-      background: #1a1a1a;
       border-radius: 15px;
-      padding: 15px;
-      text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
     }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card h3 {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-    .players {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 10px;
-      flex-wrap: wrap;
-      gap: 8px;
+    .channel h2 {
+      margin-bottom: 15px;
+      color: #ffcc00;
     }
     .btn {
+      display: block;
+      margin: 10px auto;
+      padding: 12px;
+      width: 80%;
+      max-width: 300px;
       background: #e50914;
-      border: none;
-      padding: 10px;
-      border-radius: 8px;
       color: #fff;
-      font-size: 14px;
       text-decoration: none;
-      cursor: pointer;
-      flex: 1;
-      text-align: center;
-      display: inline-block;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: background 0.3s;
     }
     .btn:hover {
-      background: #ff3333;
+      background: #b20710;
     }
   </style>
 </head>
 <body>
-  <header>📺 قنواتي (ستايل شاهد)</header>
-  <div class="container" id="channels"></div>
 
-  <script>
-    let channels = [];
+  <h1>📺 قنوات البث المباشر</h1>
 
-    async function loadM3U() {
-      const response = await fetch('IPTV.m3u');
-      const text = await response.text();
-      const lines = text.split('\n');
+  <div class="channel">
+    <h2>🎬 قناة 1</h2>
+    <a class="btn" href="vlc://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر VLC</a>
+    <a class="btn" href="mxplayer://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر MX Player</a>
+    <a class="btn" href="wuffy://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر Wuffy</a>
+  </div>
 
-      for (let i = 0; i < lines.length; i++) {
-        if (lines[i].startsWith('#EXTINF')) {
-          const name = lines[i].split(',')[1];
-          const url = lines[i + 1];
-          if (url && url.startsWith("http")) {
-            channels.push({ name, url });
-          }
-        }
-      }
+  <div class="channel">
+    <h2>⚽ قناة 2</h2>
+    <a class="btn" href="vlc://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر VLC</a>
+    <a class="btn" href="mxplayer://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر MX Player</a>
+    <a class="btn" href="wuffy://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر Wuffy</a>
+  </div>
 
-      renderChannels();
-    }
-
-    function renderChannels() {
-      const container = document.getElementById('channels');
-      channels.forEach(ch => {
-        const card = document.createElement('div');
-        card.className = 'card';
-
-        const title = document.createElement('h3');
-        title.textContent = ch.name;
-
-        const players = document.createElement('div');
-        players.className = 'players';
-
-        // VLC
-        const vlcBtn = document.createElement('a');
-        vlcBtn.className = 'btn';
-        vlcBtn.textContent = "VLC";
-        vlcBtn.href = `vlc://${ch.url}`;
-
-        // MX Player
-        const mxBtn = document.createElement('a');
-        mxBtn.className = 'btn';
-        mxBtn.textContent = "MX Player";
-        mxBtn.href = `mxplayer://${ch.url}`;
-
-        // Wuffy
-        const wuffyBtn = document.createElement('a');
-        wuffyBtn.className = 'btn';
-        wuffyBtn.textContent = "Wuffy";
-        wuffyBtn.href = `wuffy://${ch.url}`;
-
-        // Web Player (اختياري)
-        const webBtn = document.createElement('a');
-        webBtn.className = 'btn';
-        webBtn.textContent = "Web";
-        webBtn.href = ch.url;
-        webBtn.target = "_blank";
-
-        players.appendChild(vlcBtn);
-        players.appendChild(mxBtn);
-        players.appendChild(wuffyBtn);
-        players.appendChild(webBtn);
-
-        card.appendChild(title);
-        card.appendChild(players);
-
-        container.appendChild(card);
-      });
-    }
-
-    loadM3U();
-  </script>
 </body>
 </html>
