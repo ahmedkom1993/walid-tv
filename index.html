@@ -1,122 +1,78 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WALID TV</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet">
+  <title>قنوات IPTV</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
-    body { margin: 0; font-family: 'Readex Pro', sans-serif; background: #f8f8f8; }
-    header {
-      background: linear-gradient(135deg, #4f46e5, #9333ea, #ec4899);
-      color: #fff; padding: 15px; display: flex; align-items: center; justify-content: space-between;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.35); position: fixed; top: 0; width: 100%; z-index: 1000;
-      border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
-    header h3 { margin: 0; font-size: 22px; font-weight: bold; letter-spacing: 1px; }
-    .icons { display: flex; gap: 15px; font-size: 22px; cursor: pointer; }
-
-    .sidenav {
-      height: 100%; width: 0; position: fixed; top: 0; right: 0;
-      background: linear-gradient(160deg, #4f46e5, #9333ea, #ec4899);
-      overflow-x: hidden; transition: 0.5s; padding-top: 60px;
-      box-shadow: -4px 0 15px rgba(0,0,0,0.5); z-index: 1500;
+    video {
+      width: 90%;
+      max-width: 800px;
+      margin-top: 20px;
+      border: 3px solid #00ffcc;
+      border-radius: 12px;
     }
-    .sidenav a { padding: 12px 25px; text-decoration: none; font-size: 20px; color: #fff; display: block;
-      border-radius: 10px; margin: 8px 12px; transform: translateX(40px); opacity: 0; transition: all 0.4s ease; }
-    .sidenav.show a { transform: translateX(0); opacity: 1; }
-    .sidenav a:hover { background: rgba(255,255,255,0.2); }
-    .sidenav img { width: 80%; margin: 0 auto 15px; border-radius: 12px; display: block; }
-    .sidenav .closebtn { position: absolute; top: 10px; left: 15px; font-size: 35px; color: #fff; cursor: pointer; }
-
-    .dropdown { position: relative; }
-    .dropdown .buttons {
-      display: none; position: absolute; top: 40px; left: 0; background: #333;
-      border-radius: 10px; padding: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    select {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
     }
-    .dropdown .buttons a {
-      display: block; background: linear-gradient(135deg, #4f46e5, #9333ea); color: #fff;
-      padding: 10px; margin: 5px 0; border-radius: 8px; text-align: center; text-decoration: none; transition: 0.3s;
-    }
-    .dropdown .buttons a:hover { background: #ec4899; }
-
-    #page { margin-top: 90px; padding: 15px; }
-    #page a {
-      display: block; background: #fff; border-radius: 18px; overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15); text-decoration: none; margin-bottom: 18px;
-      transition: transform 0.3s, box-shadow 0.3s; opacity: 0; transform: translateY(40px);
-    }
-    #page a.show { opacity: 1; transform: translateY(0); transition: all 0.6s ease-out; }
-    #page a:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
-    #page img { width: 100%; height: 180px; object-fit: cover; }
-    #page p { margin: 0; padding: 12px; text-align: center; font-size: 18px; font-weight: bold; color: #4f46e5; background: #f9f9f9; }
   </style>
 </head>
 <body>
-
-  <header>
-    <h3>WALID TV</h3>
-    <div class="icons">
-      <i class="fa fa-bars" onclick="openNav()"></i>
-      <div class="dropdown">
-        <i class="fa fa-ellipsis-v" onclick="toggleMenu()"></i>
-        <div class="buttons" id="socialMenu">
-          <a href="https://www.facebook.com/profile.php?id=100004085566620" target="_blank">فيسبوك</a>
-          <a href="https://wa.me/qr/AOGRRCDVC5DYN1" target="_blank">واتساب</a>
-          <a href="https://www.youtube.com/@connect_walidelgoker" target="_blank">يوتيوب</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div id="myNav" class="sidenav">
-    <span class="closebtn" onclick="closeNav()">×</span>
-    <img src="https://k.top4top.io/s_32583vay41.jpg" alt="Logo">
-    <a href="https://www.t.me/AAMIIMAA">التواصل عبر تلجرام</a>
-    <a href="https://sites.google.com/view/weltv/الصفحة-الرئيسية">الشروط والأحكام</a>
-    <a href="https://sites.google.com/view/walid-tv-channel/الصفحة-الرئيسية">سياسة الخصوصية</a>
-  </div>
-
-  <div id="page">
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page1.html"><img src="https://c.top4top.io/p_35204zbrd0.jpg"><p>قنوات bein sport</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page8.html"><img src="https://f.top4top.io/p_3508ee63i1.jpeg"><p>⚽ قنوات SSC</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page2.html"><img src="https://a.top4top.io/p_3508b2ipc8.jpeg"><p>🥇 قنوات رياضية</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page3.html"><img src="https://g.top4top.io/p_350849g2w2.jpeg"><p>🇪🇬 قنوات مصرية</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page4.html"><img src="https://b.top4top.io/p_3508otdut9.png"><p>🇪🇬 أفلام عربية</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page5.html"><img src="https://j.top4top.io/p_3508thcbc8.jpeg"><p>⚔️ أفلام أجنبية</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page6.html"><img src="https://i.top4top.io/p_3508pipco7.jpeg"><p>🎭 مسرحيات</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page7.html"><img src="https://k.top4top.io/p_3508as8rf9.jpeg"><p>🎉 كارتون</p></a>
-    <a href="https://ahmedkom1993.github.io/walid-tv/pages/page9.html"><img src="https://l.top4top.io/p_3508chhz27.jpeg"><p>⛈️ قنوات إخبارية</p></a>
-  </div>
+  <h1>📺 قنواتي</h1>
+  <select id="channelList"></select>
+  <br>
+  <video id="video" controls autoplay></video>
 
   <script>
-    function openNav() {
-      const nav = document.getElementById("myNav");
-      nav.style.width = "260px";
-      setTimeout(() => nav.classList.add("show"), 200);
-    }
-    function closeNav() {
-      const nav = document.getElementById("myNav");
-      nav.style.width = "0";
-      nav.classList.remove("show");
-    }
-    function toggleMenu() {
-      let menu = document.getElementById("socialMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    const sections = document.querySelectorAll('#page a');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('show');
+    async function loadM3U() {
+      const response = await fetch('IPTV.m3u'); // لازم يبقى بنفس اسم الملف المرفوع
+      const text = await response.text();
+      const lines = text.split('\n');
+      const channels = [];
+      
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].startsWith('#EXTINF')) {
+          const name = lines[i].split(',')[1];
+          const url = lines[i + 1];
+          if (url && url.startsWith("http")) {
+            channels.push({ name, url });
+          }
         }
+      }
+
+      const select = document.getElementById('channelList');
+      channels.forEach((ch, index) => {
+        const option = document.createElement('option');
+        option.value = ch.url;
+        option.textContent = ch.name;
+        select.appendChild(option);
       });
-    }, { threshold: 0.1 });
 
-    sections.forEach(section => observer.observe(section));
+      playChannel(channels[0].url);
+      select.addEventListener('change', e => playChannel(e.target.value));
+    }
+
+    function playChannel(url) {
+      const video = document.getElementById('video');
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+      }
+    }
+
+    loadM3U();
   </script>
-
 </body>
 </html>
