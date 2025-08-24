@@ -4,64 +4,39 @@
   <meta charset="UTF-8">
   <title>📺 قنوات البث المباشر</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      margin: 20px 0;
-      color: #e50914;
-    }
-    .channel {
-      background: #222;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .channel h2 {
-      margin-bottom: 15px;
-      color: #ffcc00;
-    }
+    body { background:#111; color:#fff; font-family:sans-serif; text-align:center; }
+    h1 { color:#e50914; }
     .btn {
-      display: block;
-      margin: 10px auto;
-      padding: 12px;
-      width: 80%;
-      max-width: 300px;
-      background: #e50914;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 16px;
-      transition: background 0.3s;
+      display:block; margin:12px auto; padding:14px;
+      width:80%; max-width:320px;
+      background:#e50914; color:#fff;
+      text-decoration:none; border-radius:14px;
+      font-size:18px; font-weight:bold;
+      transition:0.3s;
     }
-    .btn:hover {
-      background: #b20710;
-    }
+    .btn:hover { background:#b20710; }
   </style>
 </head>
 <body>
+  <h1>📺 قنواتي</h1>
 
-  <h1>📺 قنوات البث المباشر</h1>
+  <!-- قناة 1 -->
+  <a class="btn"
+     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
+     ⚽ قناة 1
+  </a>
 
-  <div class="channel">
-    <h2>🎬 قناة 1</h2>
-    <a class="btn" href="vlc://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر VLC</a>
-    <a class="btn" href="mxplayer://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر MX Player</a>
-    <a class="btn" href="wuffy://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221">تشغيل عبر Wuffy</a>
-  </div>
+  <!-- قناة 2 -->
+  <a class="btn"
+     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
+     🎬 قناة 2
+  </a>
 
-  <div class="channel">
-    <h2>⚽ قناة 2</h2>
-    <a class="btn" href="vlc://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر VLC</a>
-    <a class="btn" href="mxplayer://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر MX Player</a>
-    <a class="btn" href="wuffy://http://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019">تشغيل عبر Wuffy</a>
-  </div>
+  <!-- قناة 3 -->
+  <a class="btn"
+     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/126#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
+     📺 قناة 3
+  </a>
 
 </body>
 </html>
