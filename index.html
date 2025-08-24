@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title></title>وليد تيفي</title>
+  <title>📺 قنواتي</title>
   <style>
     body {
       background: #0d0d0d;
@@ -43,6 +43,8 @@
       display: flex;
       justify-content: space-around;
       margin-top: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .btn {
       background: #e50914;
@@ -53,6 +55,7 @@
       font-size: 14px;
       cursor: pointer;
       transition: background 0.2s;
+      flex: 1;
     }
     .btn:hover {
       background: #ff3333;
@@ -84,6 +87,12 @@
       renderChannels();
     }
 
+    function intentLink(url, pkg) {
+      // بنشيل http:// من الأول لأن scheme=http بيضيفها
+      let cleanUrl = url.replace("http://", "").replace("https://", "");
+      return `intent://${cleanUrl}#Intent;package=${pkg};scheme=http;type=video/*;end`;
+    }
+
     function renderChannels() {
       const container = document.getElementById('channels');
       channels.forEach(ch => {
@@ -101,7 +110,7 @@
         vlcBtn.className = 'btn';
         vlcBtn.textContent = "VLC";
         vlcBtn.onclick = () => {
-          window.location.href = "intent://" + ch.url + "#Intent;package=org.videolan.vlc;scheme=http;end";
+          window.location.href = intentLink(ch.url, "org.videolan.vlc");
         };
 
         // MX Player
@@ -109,7 +118,7 @@
         mxBtn.className = 'btn';
         mxBtn.textContent = "MX Player";
         mxBtn.onclick = () => {
-          window.location.href = "intent://" + ch.url + "#Intent;package=com.mxtech.videoplayer.ad;scheme=http;end";
+          window.location.href = intentLink(ch.url, "com.mxtech.videoplayer.ad");
         };
 
         // Wuffy
@@ -117,15 +126,15 @@
         wuffyBtn.className = 'btn';
         wuffyBtn.textContent = "Wuffy";
         wuffyBtn.onclick = () => {
-          window.location.href = "intent://" + ch.url + "#Intent;package=co.wuffy.player;scheme=http;end";
+          window.location.href = intentLink(ch.url, "co.wuffy.player");
         };
 
-        // Web Player (داخل التطبيق نفسه لو حابب)
+        // Web Player (للتجريب فقط مع روابط m3u8)
         const webBtn = document.createElement('button');
         webBtn.className = 'btn';
         webBtn.textContent = "Web";
         webBtn.onclick = () => {
-          alert("هنا ممكن نركب مشغل HLS.js للروابط اللي بتدعم m3u8 فقط");
+          alert("ممكن نوصل HLS.js هنا لتشغيل الروابط m3u8 داخل المتصفح");
         };
 
         players.appendChild(vlcBtn);
