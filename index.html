@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>📺 قنوات البث المباشر</title>
+  <title>📺 قائمة القنوات</title>
   <style>
     body { background:#111; color:#fff; font-family:sans-serif; text-align:center; }
     h1 { color:#e50914; }
@@ -18,25 +18,34 @@
   </style>
 </head>
 <body>
-  <h1>📺 قنواتي</h1>
+  <h1>📺 جميع القنوات</h1>
+  <div id="channels"></div>
 
-  <!-- قناة 1 -->
-  <a class="btn"
-     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3019#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
-     ⚽ قناة 1
-  </a>
+  <script>
+    // رابط ملف الـ M3U من GitHub (غيره برابطك)
+    const m3uUrl = "https://raw.githubusercontent.com/USERNAME/REPO/main/yourfile.m3u";
 
-  <!-- قناة 2 -->
-  <a class="btn"
-     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/3221#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
-     🎬 قناة 2
-  </a>
-
-  <!-- قناة 3 -->
-  <a class="btn"
-     href="intent://ugeen.live:8080/Ugeen_VIPmr6ff0/PKNTBk/126#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end">
-     📺 قناة 3
-  </a>
-
+    fetch(m3uUrl)
+      .then(response => response.text())
+      .then(data => {
+        const lines = data.split("\n");
+        let name = "";
+        lines.forEach(line => {
+          if (line.startsWith("#EXTINF")) {
+            // استخراج اسم القناة من السطر
+            const match = line.match(/,(.*)$/);
+            if (match) name = match[1].trim();
+          } else if (line.startsWith("http")) {
+            // إنشاء زر القناة بالرابط
+            const url = line.trim();
+            const btn = document.createElement("a");
+            btn.className = "btn";
+            btn.textContent = "▶️ " + (name || "قناة");
+            btn.href = `intent://${url.replace("http://", "")}#Intent;scheme=http;package=org.videolan.vlc;S.user_agent=Mozilla/5.0;end`;
+            document.getElementById("channels").appendChild(btn);
+          }
+        });
+      });
+  </script>
 </body>
 </html>
