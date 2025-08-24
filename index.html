@@ -2,8 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>قنوات IPTV</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <title>قنواتي عبر VLC</title>
   <style>
     body {
       background: #111;
@@ -11,30 +10,21 @@
       font-family: Arial, sans-serif;
       text-align: center;
     }
-    video {
-      width: 90%;
-      max-width: 800px;
-      margin-top: 20px;
-      border: 3px solid #00ffcc;
-      border-radius: 12px;
-    }
     select {
-      margin-top: 20px;
-      padding: 10px;
-      font-size: 16px;
+      margin: 20px;
+      padding: 12px;
+      font-size: 18px;
       border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <h1>📺 قنواتي</h1>
+  <h1>📺 قنواتي (تعمل مباشرة في VLC)</h1>
   <select id="channelList"></select>
-  <br>
-  <video id="video" controls autoplay></video>
 
   <script>
     async function loadM3U() {
-      const response = await fetch('IPTV.m3u'); // لازم يبقى بنفس اسم الملف المرفوع
+      const response = await fetch('IPTV.m3u'); // لازم الملف يبقى بنفس الاسم
       const text = await response.text();
       const lines = text.split('\n');
       const channels = [];
@@ -57,19 +47,13 @@
         select.appendChild(option);
       });
 
-      playChannel(channels[0].url);
-      select.addEventListener('change', e => playChannel(e.target.value));
-    }
+      // أول قناة تفتح مباشرة في VLC
+      window.location.href = channels[0].url;
 
-    function playChannel(url) {
-      const video = document.getElementById('video');
-      if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
-      }
+      // أي اختيار من القائمة يفتح على طول في VLC
+      select.addEventListener('change', e => {
+        window.location.href = e.target.value;
+      });
     }
 
     loadM3U();
