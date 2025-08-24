@@ -53,9 +53,11 @@
       border-radius: 8px;
       color: #fff;
       font-size: 14px;
+      text-decoration: none;
       cursor: pointer;
-      transition: background 0.2s;
       flex: 1;
+      text-align: center;
+      display: inline-block;
     }
     .btn:hover {
       background: #ff3333;
@@ -87,12 +89,6 @@
       renderChannels();
     }
 
-    function intentLink(url, pkg) {
-      // بنشيل http:// من الأول لأن scheme=http بيضيفها
-      let cleanUrl = url.replace("http://", "").replace("https://", "");
-      return `intent://${cleanUrl}#Intent;package=${pkg};scheme=http;type=video/*;end`;
-    }
-
     function renderChannels() {
       const container = document.getElementById('channels');
       channels.forEach(ch => {
@@ -106,36 +102,29 @@
         players.className = 'players';
 
         // VLC
-        const vlcBtn = document.createElement('button');
+        const vlcBtn = document.createElement('a');
         vlcBtn.className = 'btn';
         vlcBtn.textContent = "VLC";
-        vlcBtn.onclick = () => {
-          window.location.href = intentLink(ch.url, "org.videolan.vlc");
-        };
+        vlcBtn.href = `vlc://${ch.url}`;
 
         // MX Player
-        const mxBtn = document.createElement('button');
+        const mxBtn = document.createElement('a');
         mxBtn.className = 'btn';
         mxBtn.textContent = "MX Player";
-        mxBtn.onclick = () => {
-          window.location.href = intentLink(ch.url, "com.mxtech.videoplayer.ad");
-        };
+        mxBtn.href = `mxplayer://${ch.url}`;
 
         // Wuffy
-        const wuffyBtn = document.createElement('button');
+        const wuffyBtn = document.createElement('a');
         wuffyBtn.className = 'btn';
         wuffyBtn.textContent = "Wuffy";
-        wuffyBtn.onclick = () => {
-          window.location.href = intentLink(ch.url, "co.wuffy.player");
-        };
+        wuffyBtn.href = `wuffy://${ch.url}`;
 
-        // Web Player (للتجريب فقط مع روابط m3u8)
-        const webBtn = document.createElement('button');
+        // Web Player (اختياري)
+        const webBtn = document.createElement('a');
         webBtn.className = 'btn';
         webBtn.textContent = "Web";
-        webBtn.onclick = () => {
-          alert("ممكن نوصل HLS.js هنا لتشغيل الروابط m3u8 داخل المتصفح");
-        };
+        webBtn.href = ch.url;
+        webBtn.target = "_blank";
 
         players.appendChild(vlcBtn);
         players.appendChild(mxBtn);
