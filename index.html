@@ -19,16 +19,17 @@
   </style>
 </head>
 <body>
-  <h1>📺 قنواتي (تعمل مباشرة في VLC)</h1>
+  <h1>📺 قنواتي (VLC مباشر)</h1>
   <select id="channelList"></select>
 
   <script>
+    let channels = [];
+
     async function loadM3U() {
-      const response = await fetch('IPTV.m3u'); // لازم الملف يبقى بنفس الاسم
+      const response = await fetch('IPTV.m3u'); // لازم يكون بنفس الاسم
       const text = await response.text();
       const lines = text.split('\n');
-      const channels = [];
-      
+
       for (let i = 0; i < lines.length; i++) {
         if (lines[i].startsWith('#EXTINF')) {
           const name = lines[i].split(',')[1];
@@ -47,13 +48,18 @@
         select.appendChild(option);
       });
 
-      // أول قناة تفتح مباشرة في VLC
-      window.location.href = channels[0].url;
+      // افتح أول قناة في VLC
+      openInVLC(channels[0].url);
 
-      // أي اختيار من القائمة يفتح على طول في VLC
+      // أي اختيار جديد يفتح على طول في VLC
       select.addEventListener('change', e => {
-        window.location.href = e.target.value;
+        openInVLC(e.target.value);
       });
+    }
+
+    function openInVLC(url) {
+      // صيغة intent:// للأندرويد → تفتح VLC مباشرة
+      window.location.href = "intent://" + url + "#Intent;package=org.videolan.vlc;scheme=http;end";
     }
 
     loadM3U();
