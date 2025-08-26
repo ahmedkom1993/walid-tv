@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسطورة TV | تحميل لأجهزة التلفزيون الذكية الأندرويد</title>
+    <meta name="description" content="الأسطورة TV تحميل لأجهزة التلفزيون الذكية الأندرويد">
+    <meta name="author" content="Ostora TV">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ostora.tv/downloads/android_tv.php" />
+    <meta property="og:title" content="الأسطورة TV">
+    <meta property="og:description" content="الأسطورة TV تحميل لأجهزة التلفزيون الذكية الأندرويد">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.ostora.tv/downloads/android_tv.php">
+    <meta property="og:image" content="https://www.ostora.tv/assets/images/logo.jpg">
+    <meta property="og:locale" content="ar">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الأسطورة TV">
+    <meta name="twitter:description" content="الأسطورة TV تحميل لأجهزة التلفزيون الذكية الأندرويد">
+    <meta name="twitter:image" content="https://www.ostora.tv/assets/images/logo.jpg">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=en" hreflang="en">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=ar" hreflang="ar">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=es" hreflang="es">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=fr" hreflang="fr">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=tr" hreflang="tr">
+    <link rel="alternate" href="https://www.ostora.tv/downloads/android_tv.php?lang=fa" hreflang="fa">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ostora TV",
+      "url": "https://www.ostora.tv",
+      "logo": "https://www.ostora.tv/assets/images/logo.jpg",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+1-800-000-0000",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Arabic", "Spanish", "French", "Turkish", "Persian"]
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ostora TV",
+      "operatingSystem": "Android, iOS, Windows, MacOS",
+      "applicationCategory": "Entertainment",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://www.ostora.tv/downloads.php?lang=ar"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "5991799"
+      },
+      "downloadUrl": "https://www.ostora.tv/downloads.php?lang=ar",
+      "author": {
+        "@type": "Organization",
+        "name": "Ostora TV"
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.rtl.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://www.ostora.tv/assets/css/styles.css">
+</head>
+<body id="top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.ostora.tv/?lang=ar">
+            الأسطورة TV        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/index.php?lang=ar">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/downloads.php?lang=ar">التحميل</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/features.php?lang=ar">الميزات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/faq.php?lang=ar">الأسئلة الشائعة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/blog.php?lang=ar">المدونة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/about.php?lang=ar">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.ostora.tv/contact.php?lang=ar">اتصل بنا</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" 
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        اللغة                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="?lang=ar">العربية</a></li>
+                        <li><a class="dropdown-item" href="?lang=en">English</a></li>
+                        <li><a class="dropdown-item" href="?lang=es">Español</a></li>
+                        <li><a class="dropdown-item" href="?lang=fr">Français</a></li>
+                        <li><a class="dropdown-item" href="?lang=tr">Türkçe</a></li>
+                        <li><a class="dropdown-item" href="?lang=fa">فارسی</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><header class="text-center">
+    <div class="container">
+    <h1 class="text-center">تحميل لأجهزة التلفزيون الذكية الأندرويد</h1>
+    <p class="text-center">الإصدار الحالي: 4.9</p>
+        <a href="https://www.ostora.tv/downloads/ostora_smart_4.9.apk" class="btn btn-danger btn-lg">قم بالتحميل الآن <i class="fas fa-download"></i></a>
+    </div>
+</header>
+
+
+<section class="container pt-2 pb-5">
+    
+    <h2 class="mt-5">تعليمات التثبيت</h2>
+    <ol>
+        <li>قم بتمكين تثبيت التطبيقات من مصادر غير معروفة في إعدادات تلفزيونك الذكي.</li>
+        <li>قم بتنزيل ملف APK الخاص بـ Ostora TV من موقعنا الرسمي باستخدام متصفح الويب على تلفزيونك.</li>
+        <li>افتح ملف APK الذي تم تنزيله لبدء عملية التثبيت.</li>
+        <li>اتبع التعليمات التي تظهر على الشاشة لإكمال عملية التثبيت.</li>
+        <li>بمجرد التثبيت، افتح التطبيق وابدأ في بث المحتوى المفضل لديك.</li>
+    </ol>
+</section>
+
+<footer class="bg-black text-white pt-5 pb-4">
+    <div class="container text-md-left">
+        <div class="row text-md-left">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-white">من نحن</h5>
+                <p>الأسطورة TV ملتزمة بتقديم خدمات بث عالية الجودة لمستخدمينا. مهمتنا هي توفير تجارب مشاهدة سلسة وممتعة عبر جميع المنصات.</p>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-white">روابط سريعة</h5>
+                <p><a href="index.php?lang=ar" class="text-white" style="text-decoration: none;">الرئيسية</a></p>
+                <p><a href="about.php?lang=ar" class="text-white" style="text-decoration: none;">من نحن</a></p>
+                <p><a href="features.php?lang=ar" class="text-white" style="text-decoration: none;">الميزات</a></p>
+                <p><a href="downloads.php?lang=ar" class="text-white" style="text-decoration: none;">التحميل</a></p>
+                <p><a href="contact.php?lang=ar" class="text-white" style="text-decoration: none;">اتصل بنا</a></p>
+            </div>
+
+
+            <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-white">الاشتراك في النشرة الإخبارية</h5>
+                <form action="subscribe.php?lang=ar" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="subscriber_email" class="form-control" placeholder="أدخل بريدك الإلكتروني" aria-label="أدخل بريدك الإلكتروني" aria-describedby="button-subscribe" required>
+                        <button class="btn btn-danger" type="submit" id="button-subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <small class="form-text text-white mt-2">Stay updated with our latest news and offers.</small>
+            </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="row align-items-center">
+            <div class="col-md-8 col-lg-8 col-xl-8 mx-auto">
+                <p class="text-white">© 2025 <strong>الأسطورة TV</strong>. All Rights Reserved.</p>
+            </div> 
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto">
+                <p class="text-white">
+                    <a href="privacy.php?lang=ar" class="text-white me-3" style="text-decoration: none;">Privacy Policy</a>
+                    <a href="terms.php?lang=ar" class="text-white" style="text-decoration: none;">Terms of Service</a>
+                </p>
+            </div>
+
+            <div class="col-md-5 col-lg-4">
+                <div class="text-end">
+                    <a href="#top" class="text-white" style="text-decoration: none;">
+                        <i class="fas fa-arrow-circle-up fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.ostora.tv/assets/js/scripts.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('a[href="#top"]').click(function(){
+            $('html, body').animate({scrollTop: 0}, 'slow');
+            return false;
+        });
+        
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('a[href="#top"]').fadeIn();
+            } else {
+                $('a[href="#top"]').fadeOut();
+            }
+        });
+    });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"46bc2bf4245845f1871bc49dc66b3495","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
